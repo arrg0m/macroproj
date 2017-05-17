@@ -1,6 +1,10 @@
 function [par_beta, par_delta, par_rho, par_gamma, par_alpha, par_lambda, par_phi,...
     pf, z, w, bs, bn, n, k, invt, out, cs, cn, Js, Rs, Jn, Rn,...
-    pfp, zp, wp, bsp, bnp, np, kp, invtp, outp, csp, cnp, Jsp, Rsp, Jnp, Rnp] = EZGmodel_ss
+    pfp, zp, wp, bsp, bnp, np, kp, invtp, outp, csp, cnp, Jsp, Rsp, Jnp, Rnp] = EZGmodel_ss(isLog)
+
+if nargin == 0
+    isLog = 0;
+end
 
 par_beta = 0.99;
 par_delta = 0.025;
@@ -14,7 +18,7 @@ pf = par_beta;
 z = 1;
 knratio = ((1/par_beta - (1-par_delta))/par_alpha)^(1/(par_alpha-1));
 w = (1-par_alpha)*z*knratio^(par_alpha);
-bs = 0; % IN FACT; CANNOT LOG-LINEARIZE at zero; or ...
+bs = 0;
 bn = 0;
 n = 1/(par_lambda + 1);
 k = knratio * n;
@@ -27,21 +31,17 @@ Rs = cs;
 Jn = cn;
 Rn = cn;
 
-% pf = log(pf);
-% z = log(z);
-% w = log(w);
-% bs = log(bs);
-% bn = log(bn);
-% n = log(n);
-% k = log(k);
-% invt = log(invt);
-% out = log(out);
-% cs = log(cs);
-% cn = log(cn);
-% Js = log(Js);
-% Rs = log(Rs);
-% Jn = log(Jn);
-% Rn = log(Rn);
+if isLog == 1
+    pf = log(pf);
+    z = log(z);
+    w = log(w);
+    n = log(n);
+    k = log(k);
+    invt = log(invt);
+    out = log(out);
+    cs = log(cs);
+    cn = log(cn);
+end
 
 pfp = pf;
 zp = z;

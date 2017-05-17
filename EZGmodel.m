@@ -1,4 +1,8 @@
-function [fx,fxp,fy,fyp,fypyp,fypy,fypxp,fypx,fyyp,fyy,fyxp,fyx,fxpyp,fxpy,fxpxp,fxpx,fxyp,fxy,fxxp,fxx,f] = EZGmodel
+function [fx,fxp,fy,fyp,fypyp,fypy,fypxp,fypx,fyyp,fyy,fyxp,fyx,fxpyp,fxpy,fxpxp,fxpx,fxyp,fxy,fxxp,fxx,f] = EZGmodel(isLog)
+
+if nargin == 0
+    isLog = 0;
+end
 
 syms par_beta par_delta par_rho par_gamma par_alpha par_lambda par_phi
 syms Js Rs Jn Rn cn cs z k n w invt out bs bn pf 
@@ -28,5 +32,8 @@ y = [Js Rs Jn Rn cn cs n w invt out bs bn pf];
 xp = [kp zp];
 yp = [Jsp Rsp Jnp Rnp cnp csp np wp invtp outp bsp bnp pfp];
 
-%f = subs(f, [x, y, xp, yp], (exp([x, y, xp, yp])));
+if isLog == 1
+    f = subs(f, [x, cn, cs, n, w, invt, out, pf, xp, cnp, csp, np, wp, invtp, outp, pfp], ...
+        (exp([x, cn, cs, n, w, invt, out, pf, xp, cnp, csp, np, wp, invtp, outp, pfp])));
+end
 [fx,fxp,fy,fyp,fypyp,fypy,fypxp,fypx,fyyp,fyy,fyxp,fyx,fxpyp,fxpy,fxpxp,fxpx,fxyp,fxy,fxxp,fxx]=anal_deriv(f,x,y,xp,yp);

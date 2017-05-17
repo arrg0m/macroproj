@@ -1,5 +1,11 @@
 function [fx,fxp,fy,fyp,fypyp,fypy,fypxp,fypx,fyyp,fyy,fyxp,fyx,fxpyp,fxpy,fxpxp,fxpx,fxyp,fxy,fxxp,fxx,f] = EZRBCmodel(isLog)
 
+
+if nargin == 0
+    isLog = 0;
+end
+
+
 syms par_beta par_delta par_rho par_gamma par_alpha par_lambda par_phi
 syms k z J R c n invt out
 syms kp zp Jp Rp cp np invtp outp

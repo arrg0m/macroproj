@@ -1,6 +1,10 @@
 function [par_beta, par_delta, par_rho, par_gamma, par_alpha, par_lambda, par_phi, eta,...
             con, invt, out, k, z, n, J, R, ...
             conp, invtp, outp, kp, zp, np, Jp, Rp] = EZRBCmodel_ss(isLog)
+        
+if nargin == 0
+    isLog = 0;
+end
 
 par_beta = 0.99;
 par_delta = 0.025;

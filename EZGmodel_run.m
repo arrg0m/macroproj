@@ -1,10 +1,13 @@
-[fx,fxp,fy,fyp,fypyp,fypy,fypxp,fypx,fyyp,fyy,fyxp,fyx,fxpyp,fxpy,fxpxp,fxpx,fxyp,fxy,fxxp,fxx,f] = EZGmodel;
+isLog = 1;
+
+[fx,fxp,fy,fyp,fypyp,fypy,fypxp,fypx,fyyp,fyy,fyxp,fyx,fxpyp,fxpy,fxpxp,fxpx,fxyp,fxy,fxxp,fxx,f] = EZGmodel(isLog);
+
 
 %Numerical Evaluation
 %Steady State and Parameter Values
 [par_beta, par_delta, par_rho, par_gamma, par_alpha, par_lambda, par_phi,...
     pf, z, w, bs, bn, n, k, invt, out, cs, cn, Js, Rs, Jn, Rn,...
-    pfp, zp, wp, bsp, bnp, np, kp, invtp, outp, csp, cnp, Jsp, Rsp, Jnp, Rnp] = EZGmodel_ss;
+    pfp, zp, wp, bsp, bnp, np, kp, invtp, outp, csp, cnp, Jsp, Rsp, Jnp, Rnp] = EZGmodel_ss(isLog);
 %Order of approximation desired 
 approx = 2;
 
