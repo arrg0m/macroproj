@@ -5,7 +5,6 @@
             con, invt, out, k, z, n, J, R, ...
             conp, invtp, outp, kp, zp, np, Jp, Rp] = EZRBCmodel_ss(isLog, par_lambda);
 approx = 2;
-
 num_eval;
 
 [gx,hx] = gx_hx(nfy,nfx,nfyp,nfxp);

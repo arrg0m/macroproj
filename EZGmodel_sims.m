@@ -1,7 +1,8 @@
 isLog = 1;
 par_lambda = 0.5; % 0.5, 1, 2
+par_rho = 1/1.5;
 
-Guvenen_model_run;
+EZGmodel_run;
 
 sig = 0.01;
 num_sim = 10000;
@@ -12,5 +13,5 @@ x0 = [0 0];
 
 smpl = 0.9*num_sim:num_sim;
 
-figure(10); plot(smpl,X(smpl,1),smpl,Y(smpl,1),smpl,Y(smpl,2),smpl,Y(smpl,5),smpl,Y(smpl,6));
+figure(10); plot(smpl,X(smpl,1),smpl,Y(smpl,5),smpl,Y(smpl,6),smpl,Y(smpl,9),'--',smpl,Y(smpl,10));
 legend('Capital','Consumption (Shareholders)','Consumption (Workers)','Investment','Output')

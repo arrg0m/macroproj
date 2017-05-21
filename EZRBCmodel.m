@@ -10,7 +10,7 @@ syms par_beta par_delta par_rho par_gamma par_alpha par_lambda par_phi
 syms k z J R con n invt out
 syms kp zp Jp Rp conp np invtp outp
 
-f1 = J^(1-par_rho) - (1-par_beta)*(con*(1-n)^(par_lambda))^(1-par_rho) + par_beta*R^(1-par_rho);
+f1 = J^(1-par_rho) - (1-par_beta)*(con*(1-n)^(par_lambda))^(1-par_rho) - par_beta*R^(1-par_rho);
 f2 = R^(1-par_gamma) - Jp^(1-par_gamma);
 f3 = par_lambda*con - (1-par_alpha)*z*k^(par_alpha)*n^(-par_alpha)*(1-n);
 f4 = (1-n)^(par_lambda*(1-par_rho))*con^(-par_rho) - par_beta*(par_alpha*zp*kp^(par_alpha-1)*np^(1-par_alpha) + 1 - par_delta)*(1-np)^(par_lambda*(1-par_rho))*conp^(-par_rho)*(Jp/R)^(par_rho-par_gamma);
