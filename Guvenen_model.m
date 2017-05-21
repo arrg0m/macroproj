@@ -5,7 +5,7 @@ if nargin == 0
     isLog = 0;
 end
 
-syms par_beta par_delta par_rho par_gamma par_alpha par_lambda par_phi
+syms par_beta par_delta par_gamma par_alpha par_lambda par_phi
 syms cs cn bs bn k out z invt pf w n
 syms csp cnp bsp bnp kp outp zp invtp pfp wp np
 

@@ -1,6 +1,6 @@
-function [par_beta, par_delta, par_rho, par_gamma, par_alpha, par_lambda, par_phi, eta,...
+function [par_beta, par_delta, par_gamma, par_alpha, par_phi, eta,...
             con, invt, out, k, z, n, J, R, ...
-            conp, invtp, outp, kp, zp, np, Jp, Rp] = EZRBCmodel_ss(isLog)
+            conp, invtp, outp, kp, zp, np, Jp, Rp] = EZRBCmodel_ss(isLog, par_lambda)
         
 if nargin == 0
     isLog = 0;
@@ -8,11 +8,10 @@ end
 
 par_beta = 0.99;
 par_delta = 0.025;
-par_rho = 0.95;
 par_gamma = 5;
 par_alpha = 0.36;
-par_lambda = 0.5; % 0.5, 1, or 2. TODO include as a funtional input
-par_phi = 0.8; %???
+% par_lambda = 0.5; % 0.5, 1, or 2. TODO include as a funtional input
+par_phi = 0.95;
 eta=[0 1]';
 
 z = 1;

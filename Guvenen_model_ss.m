@@ -1,6 +1,6 @@
-function [par_beta, par_delta, par_rho, par_gamma, par_alpha, par_lambda, par_phi,...
+function [par_beta, par_delta, par_gamma, par_alpha, par_phi,...
     pf, z, w, bs, bn, n, k, invt, out, cs, cn, ...
-    pfp, zp, wp, bsp, bnp, np, kp, invtp, outp, csp, cnp] = Guvenen_model_ss(isLog)
+    pfp, zp, wp, bsp, bnp, np, kp, invtp, outp, csp, cnp] = Guvenen_model_ss(isLog, par_lambda)
 
 
 if nargin == 0
@@ -10,11 +10,9 @@ end
 
 par_beta = 0.99;
 par_delta = 0.025;
-par_rho = 0.95;
 par_gamma = 5;
 par_alpha = 0.36;
-par_lambda = 0.5; % 0.5, 1, or 2. TODO include as a funtional input
-par_phi = 0.80; %???
+par_phi = 0.95;
 
 pf = par_beta;
 z = 1;
